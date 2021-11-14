@@ -1,4 +1,4 @@
-import 'package:lt/services/workout/models/instruction.dart';
+import 'package:lt/services/core/entities/instruction.dart';
 
 class Exercise {
   int id;

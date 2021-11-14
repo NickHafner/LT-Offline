@@ -1,9 +1,15 @@
+import 'package:lt/data/dao/workout_dao.dart';
 import 'package:lt/services/apis/workout_service.dart';
-import 'package:lt/services/workout/models/workout.dart';
-import 'package:lt/services/workout/models/exercise.dart';
+import 'package:lt/services/core/entities/workout.dart';
+import 'package:lt/services/core/entities/exercise.dart';
+
+import 'dao/exerciseDao.dart';
 
 class WorkoutServiceImpl extends WorkoutService {
-  WorkoutServiceImpl(Object object);
+  final ExerciseDao exerciseDao;
+  final WorkoutDao workoutDao;
+
+  WorkoutServiceImpl({required this.exerciseDao, required this.workoutDao});
 
   @override
   Future<List<Exercise>> getExercises() {

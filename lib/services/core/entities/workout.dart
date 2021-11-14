@@ -1,4 +1,4 @@
-import 'package:lt/services/workout/models/exercise.dart';
+import 'package:lt/services/core/entities/exercise.dart';
 
 class Workout {
   late int id;

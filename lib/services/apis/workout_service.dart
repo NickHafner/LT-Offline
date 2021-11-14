@@ -1,5 +1,5 @@
-import 'package:lt/services/workout/models/exercise.dart';
-import 'package:lt/services/workout/models/workout.dart';
+import 'package:lt/services/core/entities/exercise.dart';
+import 'package:lt/services/core/entities/workout.dart';
 
 abstract class WorkoutService {
   Future<List<Workout>> getWorkoutById(int userId);

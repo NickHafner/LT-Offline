@@ -20,13 +20,13 @@ mixin _$WorkoutStore on _WorkoutStoreBase, Store {
   final _$_workoutsAtom = Atom(name: '_WorkoutStoreBase._workouts');
 
   @override
-  ObservableFuture<List<Workout>> get _workouts {
+  ObservableFuture<List<Workout>>? get _workouts {
     _$_workoutsAtom.reportRead();
     return super._workouts;
   }
 
   @override
-  set _workouts(ObservableFuture<List<Workout>> value) {
+  set _workouts(ObservableFuture<List<Workout>>? value) {
     _$_workoutsAtom.reportWrite(value, super._workouts, () {
       super._workouts = value;
     });
@@ -35,13 +35,13 @@ mixin _$WorkoutStore on _WorkoutStoreBase, Store {
   final _$workoutsAtom = Atom(name: '_WorkoutStoreBase.workouts');
 
   @override
-  List<Workout> get workouts {
+  List<Workout>? get workouts {
     _$workoutsAtom.reportRead();
     return super.workouts;
   }
 
   @override
-  set workouts(List<Workout> value) {
+  set workouts(List<Workout>? value) {
     _$workoutsAtom.reportWrite(value, super.workouts, () {
       super.workouts = value;
     });
@@ -60,6 +60,13 @@ mixin _$WorkoutStore on _WorkoutStoreBase, Store {
     _$errorMsgAtom.reportWrite(value, super.errorMsg, () {
       super.errorMsg = value;
     });
+  }
+
+  final _$getWorkoutsAsyncAction = AsyncAction('_WorkoutStoreBase.getWorkouts');
+
+  @override
+  Future getWorkouts(int userId) {
+    return _$getWorkoutsAsyncAction.run(() => super.getWorkouts(userId));
   }
 
   final _$_WorkoutStoreBaseActionController =

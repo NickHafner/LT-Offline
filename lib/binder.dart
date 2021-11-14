@@ -8,5 +8,6 @@ final sl = GetIt.instance;
 void init() {
   sl.registerFactory(() => WorkoutStore(sl()));
 
-  sl.registerLazySingleton<WorkoutService>(() => FakeWorkoutServiceImpl(sl()));
+  sl.registerLazySingleton<WorkoutService>(
+      () => FakeWorkoutServiceImpl(exerciseDao: sl(), workoutDao: sl()));
 }

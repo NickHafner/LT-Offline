@@ -3,7 +3,7 @@ import 'package:lt/services/apis/workout_service.dart';
 import 'package:lt/services/core/entities/workout.dart';
 import 'package:lt/services/core/entities/exercise.dart';
 
-import 'dao/exerciseDao.dart';
+import 'package:lt/data/dao/exercise_dao.dart';
 
 class WorkoutServiceImpl extends WorkoutService {
   final ExerciseDao exerciseDao;
@@ -13,8 +13,7 @@ class WorkoutServiceImpl extends WorkoutService {
 
   @override
   Future<List<Exercise>> getExercises() {
-    // TODO: implement getExercises
-    throw UnimplementedError();
+    return exerciseDao.getExercises();
   }
 
   @override

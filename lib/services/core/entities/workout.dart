@@ -1,9 +1,9 @@
 import 'package:lt/services/core/entities/exercise.dart';
 
 class Workout {
-  late int id;
+  final int id;
   String name;
   late List<Exercise> exercises;
 
-  Workout({required this.name});
+  Workout({required this.id, required this.name});
 }
